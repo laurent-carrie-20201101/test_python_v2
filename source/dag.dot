@@ -1,0 +1,52 @@
+digraph G {
+drug_csv [ label="drug.csv" ] ;
+ct_csv [ label="clinical_trials.csv" ] ;
+pubmed_csv [ label="pubmed.csv" ] ;
+
+drug_pq [ label="drug parquet" ] ;
+ct_pq [ label="clinical trial\nparquet" ] ;
+pubmed_pq [ label="pubmed parquet" ] ;
+
+drug_pubmed_pq [ label="drug pubmed parquet" ]
+drug_ct_pq [ label="drug clinical trial\nparquet" ]
+drug_journal_pq [ label="drug journal parquet" ]
+
+json_result [ label="json result"]
+
+journal_max_drug_count [ label="journal max count" ]
+
+p1 [ style="dotted" ] ;
+p2 [ style="dotted" ] ;
+p3 [ style="dotted" ] ;
+p4 [ style="dotted" ] ;
+p5 [ style="dotted" ] ;
+p6 [ style="dotted" ] ;
+p7 [ style="dotted" ] ;
+p8 [ style="dotted" ] ;
+
+drug_csv -> p1 -> drug_pq ;
+ct_csv -> p3 -> ct_pq ;
+pubmed_csv -> p2 -> pubmed_pq ;
+
+drug_pq -> p4 ;
+pubmed_pq -> p4
+p4 -> drug_pubmed_pq ;
+
+drug_pq -> p5 ;
+ct_pq -> p5 ;
+p5 -> drug_ct_pq ;
+
+drug_pq -> p6 ;
+ct_pq -> p6 ;
+pubmed_pq -> p6 ;
+p6 -> drug_journal_pq ;
+
+drug_pubmed_pq -> p7 ;
+drug_ct_pq -> p7 ;
+drug_journal_pq -> p7 ;
+p7 -> json_result ;
+
+json_result -> p8 ;
+p8 -> journal_max_drug_count ;
+
+}
