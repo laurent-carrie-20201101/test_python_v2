@@ -7,8 +7,8 @@ setup
     :linenos:
 
     # il faut d'abord cloner le repository pour avoir les sources en local
-    git clone https://github.com/laurentcarrie/test_de_python_v2.git
-    cd test_de_python_v2
+    git clone https://github.com/laurent-carrie-20201101/test_python_v2.git
+    cd test_python_v2
 
     # create a virtual env for python
     virtualenv .venv --python=3.8
@@ -24,4 +24,3 @@ setup
 
     # run the tests
     pytest
-
