@@ -16,6 +16,7 @@ Bonjour
    run_the_tests
    run_the_demo
    sql_part_1
+   code
 
 
 Indices and tables
